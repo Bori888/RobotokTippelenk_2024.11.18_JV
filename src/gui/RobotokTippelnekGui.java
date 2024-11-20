@@ -4,6 +4,7 @@
  */
 package gui;
 
+import java.util.Random;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,12 +12,15 @@ import javax.swing.JOptionPane;
  * @author csolti
  */
 public class RobotokTippelnekGui extends javax.swing.JFrame {
+    int veletlenszam1;
+    int veletlenszam2;
 
     /**
      * Creates new form NewJFrame
      */
     public RobotokTippelnekGui() {
         initComponents();
+        
     }
 
     /**
@@ -31,17 +35,20 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel7 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
         jPanel6 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtaHaraomRobot = new javax.swing.JTextArea();
         rdbKitalalandoMutatoja = new javax.swing.JRadioButton();
         rdbTippeketMutatja = new javax.swing.JRadioButton();
         rdbMindentMutat = new javax.swing.JRadioButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        txtaEgyRobot = new javax.swing.JTextArea();
         chbMogeFuz = new javax.swing.JCheckBox();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -56,9 +63,6 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
         numMin = new javax.swing.JSpinner();
         numMax = new javax.swing.JSpinner();
         jButton1 = new javax.swing.JButton();
-        jPanel7 = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -83,16 +87,39 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
             }
         });
 
+        jTextPane1.setContentType("text/html"); // NOI18N
+        jTextPane1.setText("<html>\r\n  <head>\r\n\r\n  </head>\r\n  <body>\r\n<h1>Információ</h1>\n<h2>Menü szerkezete</h2>\n    <p style=\"margin-top: 0\">\r\n      A <i>2. menü</i> a Java elemeket mutatja be!\r\n    </p>\r\n  </body>\r\n</html>\r\n");
+        jScrollPane4.setViewportView(jTextPane1);
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(113, 113, 113)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(153, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(102, 102, 102)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(147, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("infó", jPanel7);
+
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("KIS robotok"));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("HÁROM robot"));
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("A kitalálandó szám: 10\n1. robot tippje: 10\n2. robot tippje: 4\n3. robot tippje: 2\nAz 1. robot eltalálta!\n\nA kitalálandó szám: 10\n1. robot tippje: 3\n2. robot tippje: 10\n3. robot tippje: 10\nA 2. robot eltalálta!\nA 3. robot eltalálta!");
-        jScrollPane1.setViewportView(jTextArea1);
+        txtaHaraomRobot.setColumns(20);
+        txtaHaraomRobot.setRows(5);
+        txtaHaraomRobot.setText("\n");
+        jScrollPane1.setViewportView(txtaHaraomRobot);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -123,10 +150,9 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("EGY robot"));
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jTextArea2.setText("A kitalálandó szám: 1\nAz 1. tipp: 2\nA 2. tipp: 7\nA 3. tipp: 7\nNem siekrült háromból eltalálni!\n\nA kitalálandó szám: 1\nAz 1. tipp: 3\nA 2. tipp: 6\nA 3. tipp: 3\nNem siekrült háromból eltalálni!");
-        jScrollPane2.setViewportView(jTextArea2);
+        txtaEgyRobot.setColumns(20);
+        txtaEgyRobot.setRows(5);
+        jScrollPane2.setViewportView(txtaEgyRobot);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -142,7 +168,7 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         chbMogeFuz.setSelected(true);
@@ -261,27 +287,32 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
         );
 
         jButton1.setText("Tippelő robotok indítása");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtVelSzam2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtVelSzam1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtVelSzam1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtVelSzam2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(chbKulonbozoSzamok)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -298,14 +329,14 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addComponent(txtVelSzam1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtVelSzam2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(txtVelSzam2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(15, 15, 15)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(chbKulonbozoSzamok)
                             .addComponent(jButton1))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 3, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -315,7 +346,7 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -326,34 +357,10 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Beállítások", jPanel6);
-
-        jTextPane1.setContentType("text/html"); // NOI18N
-        jTextPane1.setText("<html>\r\n  <head>\r\n\r\n  </head>\r\n  <body>\r\n<h1>Információ</h1>\n<h2>Menü szerkezete</h2>\n    <p style=\"margin-top: 0\">\r\n      A <i>2. menü</i> a Java elemeket mutatja be!\r\n    </p>\r\n  </body>\r\n</html>\r\n");
-        jScrollPane4.setViewportView(jTextPane1);
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(113, 113, 113)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(153, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(102, 102, 102)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(132, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("infó", jPanel7);
 
         jMenu1.setText("Program");
 
@@ -441,8 +448,6 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
     private void btnGeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGeneralActionPerformed
         int also = (int) numMin.getValue();
         int felso = (int)numMax.getValue();
-        int veletlenszam1;
-        int veletlenszam2;
         int db = felso - also + 1;
         veletlenszam1 = (int)(Math.random() * db) + also;
         veletlenszam2 = (int)(Math.random() * db) + also;
@@ -472,6 +477,62 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
         rdbMindentMutat.setSelected(true);
         
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        boolean mutat =rdbMindentMutat.isSelected();
+        if (mutat == true) {
+            txtaEgyRobot.setToolTipText("Egy robot tippelhet háromszor:");
+            int tipp = (int)(Math.random() * 10) + 1;
+            txtaEgyRobot.setToolTipText("A kitalálandó szám: " + veletlenszam2);
+            txtaEgyRobot.setText("Az 1. tipp: " + tipp);
+            
+
+            if(tipp == veletlenszam2){
+                txtaEgyRobot.setText("Elsőre sikerült eltalálni!");
+            }else{
+                tipp = (int)(Math.random() * 10) + 1;
+                txtaEgyRobot.setText("A 2. tipp: " + tipp);
+                if(tipp == veletlenszam2){
+                    txtaEgyRobot.setText("Másodikra sikerült eltalálni!");
+                }else{
+                    tipp = (int)(Math.random() * 10) + 1;
+                    txtaEgyRobot.setText("A 3. tipp: " + tipp);
+                    if(tipp == veletlenszam2){
+                        txtaEgyRobot.setText("Harmadikra sikerült eltalálni!");
+                    }else{
+                        txtaEgyRobot.setText("Nem siekrült háromból eltalálni!");
+                    }
+                }
+            }
+            txtaHaraomRobot.setText("Három robot tippel egyet-egyet: ");
+            int tipp1, tipp2, tipp3;
+            tipp1 = (int)(Math.random() * 10) + 1;
+            tipp2 = (int)(Math.random() * 10) + 1;
+            tipp3 = (int)(Math.random() * 10) + 1;
+            txtaHaraomRobot.setText("A kitalálandó szám: " + veletlenszam1 +" ");
+            txtaHaraomRobot.setText("1. robot tippje: " + tipp1);
+            txtaHaraomRobot.setText("2. robot tippje: " + tipp2);
+            txtaHaraomRobot.setText("3. robot tippje: " + tipp3);
+            boolean voltTalalat = false;
+            if(tipp1 == veletlenszam1){
+                voltTalalat = true;
+                txtaHaraomRobot.setText("Az 1. robot eltalálta!");
+            }
+            if(tipp2 == veletlenszam1){
+                voltTalalat = true;
+                txtaHaraomRobot.setText("A 2. robot eltalálta!");
+            }
+            if(tipp3 == veletlenszam1){
+                voltTalalat = true;
+                txtaHaraomRobot.setText("A 3. robot eltalálta!");
+            }
+            if(!voltTalalat){
+                txtaHaraomRobot.setText("Egyik robot sem találta el!");
+            }
+        
+   
+        } 
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void kilepes(){
         String cim = "KILÉPÉS";
@@ -556,8 +617,6 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JMenuItem mnuKilepes;
     private javax.swing.JSpinner numMax;
@@ -567,5 +626,7 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
     private javax.swing.JRadioButton rdbTippeketMutatja;
     private javax.swing.JTextField txtVelSzam1;
     private javax.swing.JTextField txtVelSzam2;
+    private javax.swing.JTextArea txtaEgyRobot;
+    private javax.swing.JTextArea txtaHaraomRobot;
     // End of variables declaration//GEN-END:variables
 }
