@@ -36,13 +36,13 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
+        rdbKitalalandoMutatoja = new javax.swing.JRadioButton();
+        rdbTippeketMutatja = new javax.swing.JRadioButton();
+        rdbMindentMutat = new javax.swing.JRadioButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        chbMogeFuz = new javax.swing.JCheckBox();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtVelSzam1 = new javax.swing.JTextField();
@@ -111,15 +111,15 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setText("A kitalálandót is mutatja");
+        buttonGroup1.add(rdbKitalalandoMutatoja);
+        rdbKitalalandoMutatoja.setText("A kitalálandót is mutatja");
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("Tippeket is mutatja");
+        buttonGroup1.add(rdbTippeketMutatja);
+        rdbTippeketMutatja.setText("Tippeket is mutatja");
 
-        buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setSelected(true);
-        jRadioButton3.setText("Mindent mutat");
+        buttonGroup1.add(rdbMindentMutat);
+        rdbMindentMutat.setSelected(true);
+        rdbMindentMutat.setText("Mindent mutat");
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("EGY robot"));
 
@@ -145,8 +145,8 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jCheckBox2.setSelected(true);
-        jCheckBox2.setText("Mögé fűz");
+        chbMogeFuz.setSelected(true);
+        chbMogeFuz.setText("Mögé fűz");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -162,12 +162,12 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jRadioButton1)
+                                .addComponent(rdbKitalalandoMutatoja)
                                 .addGap(18, 18, 18)
-                                .addComponent(jRadioButton2)
+                                .addComponent(rdbTippeketMutatja)
                                 .addGap(81, 81, 81)
-                                .addComponent(jCheckBox2))
-                            .addComponent(jRadioButton3))
+                                .addComponent(chbMogeFuz))
+                            .addComponent(rdbMindentMutat))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -179,11 +179,11 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jCheckBox2))
+                    .addComponent(rdbKitalalandoMutatoja)
+                    .addComponent(rdbTippeketMutatja)
+                    .addComponent(chbMogeFuz))
                 .addGap(3, 3, 3)
-                .addComponent(jRadioButton3)
+                .addComponent(rdbMindentMutat)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -457,6 +457,10 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
         numMin.setValue(1);
         numMax.setValue(10);
         chbKulonbozoSzamok.setSelected(true);
+        chbMogeFuz.setSelected(true);
+        rdbKitalalandoMutatoja.setSelected(false);
+        rdbTippeketMutatja.setSelected(false);
+        rdbMindentMutat.setSelected(true);
         
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
@@ -512,8 +516,8 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JCheckBox chbKulonbozoSzamok;
+    private javax.swing.JCheckBox chbMogeFuz;
     private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -536,9 +540,6 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -552,6 +553,9 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
     private javax.swing.JMenuItem mnuKilepes;
     private javax.swing.JSpinner numMax;
     private javax.swing.JSpinner numMin;
+    private javax.swing.JRadioButton rdbKitalalandoMutatoja;
+    private javax.swing.JRadioButton rdbMindentMutat;
+    private javax.swing.JRadioButton rdbTippeketMutatja;
     private javax.swing.JTextField txtVelSzam1;
     private javax.swing.JTextField txtVelSzam2;
     // End of variables declaration//GEN-END:variables
