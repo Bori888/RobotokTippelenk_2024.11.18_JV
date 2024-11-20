@@ -441,12 +441,21 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
     private void btnGeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGeneralActionPerformed
         int also = (int) numMin.getValue();
         int felso = (int)numMax.getValue();
-        int szam1;
+        int veletlenszam1;
+        int veletlenszam2;
         int db = felso - also + 1;
-        szam1 = (int)(Math.random() * db) + also;
-        
-        txtVelSzam1.setText(szam1 + "");
-        txtVelSzam2.setText(szam1 + "");
+        veletlenszam1 = (int)(Math.random() * db) + also;
+        veletlenszam2 = (int)(Math.random() * db) + also;
+        boolean kijelolve = chbKulonbozoSzamok.isSelected();
+        if(kijelolve== true) {
+            txtVelSzam1.setText(veletlenszam1 + "");
+            txtVelSzam2.setText(veletlenszam2 + "");
+    
+        } else {
+            txtVelSzam1.setText(veletlenszam1 + "");
+            txtVelSzam2.setText(veletlenszam1 + "");
+        }
+
     }//GEN-LAST:event_btnGeneralActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
