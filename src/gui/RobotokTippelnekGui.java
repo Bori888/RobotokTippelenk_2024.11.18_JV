@@ -139,10 +139,10 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
         );
 
         buttonGroup1.add(rdbKitalalandoMutatoja);
-        rdbKitalalandoMutatoja.setText("A kitalálandót is mutatja");
+        rdbKitalalandoMutatoja.setText("Kitalálandó + eredmény");
 
         buttonGroup1.add(rdbTippeketMutatja);
-        rdbTippeketMutatja.setText("Tippeket is mutatja");
+        rdbTippeketMutatja.setText("Tippek + eredmény");
 
         buttonGroup1.add(rdbMindentMutat);
         rdbMindentMutat.setSelected(true);
@@ -481,11 +481,10 @@ public class RobotokTippelnekGui extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         boolean mutat =rdbMindentMutat.isSelected();
         if (mutat == true) {
-            txtaEgyRobot.setToolTipText("Egy robot tippelhet háromszor:");
+            txtaEgyRobot.setText("Egy robot tippelhet háromszor:");
             int tipp = (int)(Math.random() * 10) + 1;
-            txtaEgyRobot.setToolTipText("A kitalálandó szám: " + veletlenszam2);
+            txtaEgyRobot.setText("A kitalálandó szám: " + veletlenszam2);
             txtaEgyRobot.setText("Az 1. tipp: " + tipp);
-            
 
             if(tipp == veletlenszam2){
                 txtaEgyRobot.setText("Elsőre sikerült eltalálni!");
